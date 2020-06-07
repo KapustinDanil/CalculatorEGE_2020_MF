@@ -8,7 +8,8 @@
  </body>
  <script>
     'use strict';
-    
+    let retu = true;
+while(retu){
     let informat = prompt('Сколько у вас баллов по информатике?', '');
     while(Number(informat)>100){
     alert('Не может быть более 100 баллов!');
@@ -74,7 +75,9 @@
     );
     }
     }
-    
+    retu = confirm("Посчитать ещё раз?");
+}
+window.close();
     </script>
     
 </html>

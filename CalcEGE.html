@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор ЕГЭ 2020</title>
+  <link rel="stylesheet" href="./css/style.css" class="style">
+
+  <style>
+    * {
+     margin: 0;
+     padding: 0;
+    }
+   </style>
+ </head>
+<body>
+    <div class="header">
+    <a class="header__logo" href="https://math.uniyar.ac.ru/">
+            <img src="./images/logo.png" alt="logo">
+        </a>
+    </div>
+    <div class="form-wrap">
+        <form method="post" >
+            <div>
+                <label for="name">Ваши баллы по информатике</label>
+                <input type="text" id="informat" required>
+            </div>
+            <form method="post" >
+                <div>
+                    <label for="name">Ваши баллы по математике</label>
+                    <input type="text" id="math" required>
+                </div>
+            <form method="post" >
+                <div>
+                    <label for="name">Ваши баллы по русскому языку</label>
+                    <input type="text" id="Rysianlang" required>
+                </div>
+
+            <div class="radio" >
+                <span>Есть ли у вас золотая медаль?</span>
+                <label>
+                  <input type="radio" name="GoldMedalYes" value="">
+                  <div class="radio-control male">Да</div>
+                </label>
+                <label>
+                  <input type="radio" name="GoldMedalNo" value="No">
+                  <div class="radio-control female">Нет</div>        
+            </div>  
+    <button onclick="func()">Посчитать</button>
+    
+</div>
+
+<p  id="res"></p>
+
+</body>
+
+
+
+
+ <script type="text/javascript">
+function func(){
+    'use strict';
+    var informat = document.getElementById("informat").value;
+    while(Number(informat>100)){
+    alert('Не может быть более 100 баллов по информатике!');
+    document.getElementById("informat").value="";
+    informat = 0;
+    }
+    var math = document.getElementById("math").value;
+    while(Number(math)>100){
+    alert('Не может быть более 100 баллов по математике!');
+    document.getElementById("math").value="";
+    math = 0;
+    }
+    var Rysianlang = document.getElementById("Rysianlang").value;
+    while(Number(Rysianlang)>100){
+    alert('Не может быть более 100 баллов по русскому!');
+    document.getElementById("Rysianlang").value="";
+    Rysianlang = 0;
+    }
+    
+    var res="";
+    
+    if(Number(informat)<42||Number(math)<39||Number(Rysianlang)<40){
+    let sad;
+    if(math<39)
+    sad = 'математике'
+    if(informat<42)
+    if(sad!=undefined)
+    sad += ' и информатике';
+    else sad = 'информатике';
+    if(Rysianlang<40)
+    if(sad!=undefined)
+    sad += ' и русскому языку';
+    else sad = 'русскому языку';
+    res=`К сожалению,с таким результатом по `+sad+ `, вы не сможете подать документы на наш факультет,обратитесь в университетский колледж`;
+    }
+    else{
+    let Ball = Number(informat) + Number(math)+Number(Rysianlang);
+    if (Ball >= 230){
+        res='В 2019 году вы бы поступили на бюдежетные места,на такие направления как:'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6818/">«Компьютерная безопасность»</a>'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/53470/">«Информационная безопасность»</a>'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6832/">«Прикладная математика и информатика»</a>'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6819/">«Математика и компьютерные науки»</a>'+'<br>'+'\u{1F60D}';
+    }
+    else
+    if(Ball >= 226 && Ball < 230){
+    res='В 2019 году вы бы поступили на бюдежетные места,на такие направления как:'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/53470/">«Информационная безопасность»</a>'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6832/">«Прикладная математика и информатика»</a>'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6819/">«Математика и компьютерные науки»</a>'+'<br>'+'\u{1F60D}';
+    }
+    else
+    if(Ball >= 219 && Ball < 226){
+        res='В 2019 году вы бы поступили на бюдежетные места,на такие направления как:'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6832/">«Прикладная математика и информатика»</a>'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6819/">«Математика и компьютерные науки»</a>'+'<br>'+'\u{1F60D}'+'<br>'+'<br>'+'Внебюдежетные места,на такие направления как:'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/53470/">«Информационная безопасность»</a>'+'<br>'+'\u{1F60D}';
+    }
+    else
+    if(Ball >= 212 && Ball < 219){
+        res='В 2019 году вы бы поступили на бюдежетные места,на такие направления как:'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6819/">«Математика и компьютерные науки»</a>'+'<br>'+'\u{1F60D}'+'<br>'+'<br>'+'Внебюдежетные места,на такие направления как:'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/53470/">«Информационная безопасность»</a>'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6832/">«Прикладная математика и информатика»</a>'+'<br>'+'\u{1F60D}';
+    }
+    else
+    if(Ball < 212 ){
+        res='В 2019 году вы бы поступили на внебюдежетные места,на такие направления как:'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/53470/">«Информационная безопасность»</a>'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6832/">«Прикладная математика и информатика»</a>'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6819/">«Математика и компьютерные науки»</a>'+'<br>'+'\u{1F60D}';
+    }
+    }
+    document.getElementById("res").innerHTML=res;
+    document.getElementById("informat").value="";
+    document.getElementById("math").value="";
+    document.getElementById("Rysianlang").value="";
+}
+</script>
+   
+</html>

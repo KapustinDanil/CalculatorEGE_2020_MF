@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Калькулятор ЕГЭ 2020</title>
   <link rel="stylesheet" href="./css/style.css" class="style">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
   <style>
     * {
      margin: 0;
      padding: 0;
-    }
+    }    
    </style>
+
  </head>
 <body>
     <div class="header">
@@ -25,29 +27,43 @@
                 <label for="name">Ваши баллы по информатике</label>
                 <input type="text" id="informat" required>
             </div>
-            <form method="post" >
+            
                 <div>
                     <label for="name">Ваши баллы по математике</label>
                     <input type="text" id="math" required>
                 </div>
-            <form method="post" >
                 <div>
                     <label for="name">Ваши баллы по русскому языку</label>
                     <input type="text" id="Rysianlang" required>
                 </div>
+           
+               
+                   <span><strong>Наличие золотого знака отличия ГТО</strong></span> <input type="checkbox" id="GTO" name="enabled" >
+                    <span><strong>Золотая медаль / Диплом с отличием</strong></span><input type="checkbox" class="GoldMedal" id="GoldMedal" name="enabled" >
+                    <span><strong>Волонтёр</strong></span><input type="checkbox" id="Volonter" name="enabled" >
 
-            <div class="radio" >
-                <span>Есть ли у вас золотая медаль?</span>
-                <label>
-                  <input type="radio" name="GoldMedalYes" value="">
-                  <div class="radio-control male">Да</div>
-                </label>
-                <label>
-                  <input type="radio" name="GoldMedalNo" value="No">
-                  <div class="radio-control female">Нет</div>        
-            </div>  
+                    <span><strong>Победители и призеры Российской конференции школьников <br> «Открытие» по секциям: математика и информатика</strong></span><input type="checkbox" id="RKSc" name="enabled" >
+                    <span><strong>Олимпиада «Будущие исследователи – будущее науки» по математике <br>(набравшие 30+ баллов)</strong></span><input type="checkbox" id="FIFS" name="enabled" >
+                    <span><strong>Олимпиада «Росатом» <br>Победители (призеры) отборочного тура по математике </strong></span><input type="checkbox" id="Pocatom" name="enabled" >
+                    <span><strong>Школа математики и информатики при математическом факультете ЯрГУ<br>( Выпускники, награжденные сертификатами успешного окончания школы )</strong></span><input type="checkbox" id="MathSchool" name="enabled" >
+                    
+                    <span><strong>Всероссийская олимпиада школьников по математике или информатике:</strong></span>
+                    <span>Победители (призеры) регионального этапа</span>
+                    <input type="checkbox" id="RegEtap" name="enabled" >
+                    <span>Победители (призеры) муниципального этапа</span>
+                    <input type="checkbox" id="MunicEtap" name="enabled">
+                    <span><strong>Олимпиада по математике, по информатике, проводимая ЯрГУ:</strong></span>
+                    <span>Победители </span><input type="checkbox" id="Pobed" name="enabled" >
+                    <span>Призеры</span><input type="checkbox" id="Prizer" name="enabled" >
+                    <span><strong>Отборочный тур Всероссийской командной олимпиады школьников по программированию в Центральном подрегионе России</strong></span>
+                    <span> Диплом 1 степени</span><input type="checkbox" id="UnoStepen" name="enabled" >
+                    <span> Диплом 2 степени</span><input type="checkbox" id="DuoStepen" name="enabled" >
+                    <span> Диплом 3 степени</span><input type="checkbox" id="TreStepen" name="enabled" >
+
+
+
     <button onclick="func()">Посчитать</button>
-    
+     </form>
 </div>
 
 <p  id="res"></p>
@@ -78,9 +94,79 @@ function func(){
     document.getElementById("Rysianlang").value="";
     Rysianlang = 0;
     }
-    
-    var res="";
-    
+
+
+
+var GTO=0,GoldMedal=0,Volonter=0;
+
+if(document.getElementById("GTO").checked)
+{
+    GTO+=2;
+}
+if(document.getElementById("GoldMedal").checked)
+{
+    GoldMedal+=5;
+}
+if(document.getElementById("Volonter").checked)
+{
+    Volonter+=2;
+}
+
+
+var RKSc=0,FIFS=0,Pocatom=0,MathSchool=0;
+
+if(document.getElementById("RKSc").checked)
+{
+    RKSc+=5;
+}
+if(document.getElementById("FIFS").checked)
+{
+    FIFS+=10;
+}
+if(document.getElementById("Pocatom").checked)
+{
+    Pocatom+=10;
+}
+if(document.getElementById("MathSchool").checked)
+{
+    MathSchool+=6;
+}
+
+
+var RegEtap=0,MunicEtap=0,Pobed=0,Prizer=0,UnoStepen=0,DuoStepen=0,TreStepen=0;
+
+if(document.getElementById("RegEtap").checked)
+{
+    RegEtap+=10;
+}
+if(document.getElementById("MunicEtap").checked)
+{
+    MunicEtap+=8;
+}
+if(document.getElementById("Pobed").checked)
+{
+    Pobed+=10;
+}
+if(document.getElementById("Prizer").checked)
+{
+    Prizer+=8;
+}
+if(document.getElementById("UnoStepen").checked)
+{
+    UnoStepen+=10;
+}
+if(document.getElementById("DuoStepen").checked)
+{
+    DuoStepen+=8;
+}
+if(document.getElementById("TreStepen").checked)
+{
+    TreStepen+=5;
+}
+
+
+        var res="";
+
     if(Number(informat)<42||Number(math)<39||Number(Rysianlang)<40){
     let sad;
     if(math<39)
@@ -93,10 +179,15 @@ function func(){
     if(sad!=undefined)
     sad += ' и русскому языку';
     else sad = 'русскому языку';
-    res=`К сожалению,с таким результатом по `+sad+ `, вы не сможете подать документы на наш факультет,обратитесь в университетский колледж`;
+    res=`К сожалению,с таким результатом по `+sad+ ', вы не сможете подать документы на наш факультет,обратитесь в'+'<a href="http://college.uniyar.ac.ru/"> университетский колледж</a>';
     }
     else{
-    let Ball = Number(informat) + Number(math)+Number(Rysianlang);
+
+    var DopBally=0;
+    DopBally=GTO+GoldMedal+Volonter+RKSc+FIFS+Pocatom+MathSchool+RegEtap+MunicEtap+Pobed+Prizer+UnoStepen+DuoStepen+TreStepen;
+    if(DopBally>10)
+    DopBally=10;
+    let Ball = Number(informat) + Number(math)+Number(Rysianlang)+DopBally;
     if (Ball >= 230){
         res='В 2019 году вы бы поступили на бюдежетные места,на такие направления как:'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6818/">«Компьютерная безопасность»</a>'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/53470/">«Информационная безопасность»</a>'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6832/">«Прикладная математика и информатика»</a>'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6819/">«Математика и компьютерные науки»</a>'+'<br>'+'\u{1F60D}';
     }
@@ -116,11 +207,33 @@ function func(){
     if(Ball < 212 ){
         res='В 2019 году вы бы поступили на внебюдежетные места,на такие направления как:'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/53470/">«Информационная безопасность»</a>'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6832/">«Прикладная математика и информатика»</a>'+'<br>'+'<a href="https://www.uniyar.ac.ru/education/higher_education/6819/">«Математика и компьютерные науки»</a>'+'<br>'+'\u{1F60D}';
     }
+    if(DopBally!=0)
+    res+=('<br>'+'По информатике: '+informat+' + ' + 'по математике: ' + math + ' + ' + 'по русскому: '+Rysianlang+' + '+'дополнительные баллы(не больше 10): '+ DopBally+' = '+ Ball);
+    else
+    res+=('<br>'+'По информатике: '+informat+' + ' + 'по математике: ' + math + ' + ' + 'по русскому: '+Rysianlang+' = '+ Ball);
     }
     document.getElementById("res").innerHTML=res;
+    document.getElementById("res").innerHTML=res;
+
     document.getElementById("informat").value="";
     document.getElementById("math").value="";
     document.getElementById("Rysianlang").value="";
+    document.getElementById("GTO").checked=false;
+    document.getElementById("GoldMedal").checked=false;
+    document.getElementById("Volonter").checked=false;
+
+    document.getElementById("RKSc").checked=false;
+    document.getElementById("FIFS").checked=false;
+    document.getElementById("Pocatom").checked=false;
+    document.getElementById("MathSchool").checked=false;
+
+    document.getElementById("RegEtap").checked=false;
+    document.getElementById("MunicEtap").checked=false;
+    document.getElementById("Pobed").checked=false;
+    document.getElementById("Prizer").checked=false;
+    document.getElementById("UnoStepen").checked=false;
+    document.getElementById("DuoStepen").checked=false;
+    document.getElementById("TreStepen").checked=false;
 }
 </script>
    

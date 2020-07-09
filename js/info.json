@@ -1,8 +1,12 @@
 [
-	{ "date": "2020-07-21 12:15:20", "title": "Событие 8", "description": "Lorem Ipsum dolor set", "url": "http://www.event3.com/" },
-	{ "date": "2020-07-21 12:15:20", "title": "Событие 9", "description": "Lorem Ipsum dolor set", "url": "" },
-	{ "date": "2020-07-01 12:15:20", "title": "Событие 10", "description": "Lorem Ipsum dolor set", "url": "http://www.event3.com/" },
-	{ "date": "2020-07-21 12:15:20", "title": "Событие 11", "description": "Lorem Ipsum dolor set", "url": "http://www.event3.com/" },
-	{ "date": "2020-07-21 12:15:20", "title": "Событие 12", "description": "Lorem Ipsum dolor set", "url": "http://www.event3.com/" }
+	{ "date": "2020-05-17 16:00:00", "title": "Прямой эфир", "description": "Декан отвечает на ваши вопросы", "url": "https://www.youtube.com/watch?v=Vwl_3dvXGhA&feature=youtu.be" },
+	{ "date": "2020-05-21 16:00:00", "title": "Прямой эфир", "description": "Декан отвечает на ваши вопросы + чествование победителей и призеров Олимпиады", "url": "https://www.youtube.com/watch?v=OERwuIK97uM&feature=youtu.be" },
+	{ "date": "2020-05-29 16:00:00", "title": "Прямой эфир", "description": "Декан отвечает на ваши вопросы + специальный гость из США", "url": "https://www.youtube.com/watch?v=806zklMPqwg&feature=youtu.be" },
+	{ "date": "2020-06-27 16:00:00", "title": "Прямой эфир", "description": "Родители студентов отвечают на вопросы абитуриентов", "url": "https://www.youtube.com/watch?v=Bi-jn7_xgsM&feature=youtu.be" },
+	{ "date": "2020-07-03 16:00:00", "title": "Прямой эфир", "description": "Выпускники-бакалавры и магистранты рассказали об учебе и дипломных работах, о карьере и зарплате, о важности знания английского", "url": "https://www.youtube.com/watch?v=be9e_iYz-k8&feature=youtu.be" },
+	{ "date": "2020-07-06 00:00:00", "title": "Опрос", "description": "На какие темы защитили дипломы магистры математического факультета? (опрос до 2 августа)", "url": "https://zen.yandex.ru/media/prepod/na-kakie-temy-zascitili-diplomy-studenty-matematicheskogo-fakulteta-chast-1-magistratura-5eff3bbd4996e1266bc43a1a" },
+	{ "date": "2020-07-07 16:00:00", "title": "Прямой эфир", "description": "Студенты - о внеучебной жизни факультета", "url": "https://www.youtube.com/watch?v=kX5TmrY-tfY" },
+	{ "date": "2020-07-08 00:00:00", "title": "Опрос", "description": "На какие темы защитили дипломы бакалавры (ПМИ) математического факультета? (опрос до 29 июля)", "url": "https://zen.yandex.ru/media/prepod/na-kakie-temy-zascitili-diplomy-studenty-matematicheskogo-fakulteta-chast-2-prikladnaia-matematika-i-informatika-bakalavriat-5f02e5c7ef7d7560db50569d" },
+	{ "date": "2020-07-10 16:00:00", "title": "Прямой эфир", "description": "Прямой эфир по вопросам поступления с участием декана", "url": "https://math.uniyar.ac.ru/news/pryampi-efir-10-july" }
 
 ]

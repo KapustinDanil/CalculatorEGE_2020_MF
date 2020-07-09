@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Калькулятор ЕГЭ 2020</title>
-  <link rel="stylesheet" href="./CSS/style.css" class="style">
+
+  <link rel="stylesheet" href="./css/eventCalendar.css">
+    <link rel="stylesheet" href="./css/eventCalendar_theme_responsive.css">
+
+  <link rel="stylesheet" href="./css/style.css" class="style">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
   <style>
@@ -14,13 +18,22 @@
     }    
    </style>
 
+
+
  </head>
 <body>
     <div class="header">
     <a class="header__logo" href="https://math.uniyar.ac.ru/">
-            <img src="./images/logo.png" alt="logo">
+            <img src="./images/logo.png" size="100%" alt="logo">
         </a>
     </div>
+
+
+    
+    
+   
+      <div id="eventCalendar" style="width: 600px; margin: 50px auto;"></div>
+
     <div class="form-wrap">
         <form method="post" >
             <div>
@@ -69,7 +82,6 @@
 <p  id="res"></p>
 
 </body>
-
 
 
 
@@ -236,5 +248,77 @@ if(document.getElementById("TreStepen").checked)
     document.getElementById("TreStepen").checked=false;
 }
 </script>
-   
+   <script type="text/javascript">
+Calendar.setup({
+    cont          : "calendar-container",
+    weekNumbers   : false,
+    selectionType : Calendar.SEL_MULTIPLE,
+    selection     : Calendar.dateToInt(new Date()),
+    showTime      : false,
+    min: 20200601,
+    max: 20201231,
+    onSelect      : function() {
+        var count = this.selection.countDays();
+        if (count == 1) {
+            var date = this.selection.get()[0];
+            date = Calendar.intToDate(date);
+            date = Calendar.printDate(date, "%A, %B %d, %Y");
+            $("calendar-info").innerHTML = date;
+        } else {
+            $("calendar-info").innerHTML = Calendar.formatString(
+                "${count:no date|one date|two dates|# dates} selected",
+                { count: count }
+            );
+        }
+    },
+    
+});
+    </script>
+    <script src="./js/jquery.min.js"></script>
+	<script src="./js/moment.js"></script>
+    <script src="./js/jquery.eventCalendar.js"></script>
+    <script type="text/javascript" src="./info.json"></script>
+	<script>
+
+	$(function(){
+        
+        
+		var data = [
+			{ "date": "2020-07-21 10:15:20", "title": "Событие 1", "description": "Lorem Ipsum dolor set", "url": "http://www.event3.com/" },
+			{ "date": "2020-07-18 10:15:20", "title": "Событие 2", "description": "Lorem Ipsum dolor set", "url": "" },
+			{ "date": "2020-07-01 10:15:20", "title": "Событие 3", "description": "Lorem Ipsum dolor set", "url": "http://www.event3.com/" },
+			{ "date": "2020-07-25 10:15:20", "title": "Событие 4", "description": "Lorem Ipsum dolor set", "url": "http://www.event3.com/" },
+        ];
+		$('#eventCalendar').eventCalendar({
+			//jsonData: data,
+			eventsjson: './js/info.json',
+			jsonDateFormat: 'human',
+			startWeekOnMonday: true,
+			openEventInNewWindow: true,
+			dateFormat: 'DD-MM-YYYY',
+			showDescription: false,
+			locales: {
+				locale: "ru",
+				txt_noEvents: "Нет запланированных событий",
+				txt_SpecificEvents_prev: "",
+				txt_SpecificEvents_after: "события:",
+				txt_NextEvents: "Следующие события:",
+				txt_GoToEventUrl: "Смотреть",
+				moment: {
+					"months" : [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+					"Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" ],
+					"monthsShort" : [ "Янв", "Фев", "Мар", "Апр", "Май", "Июн",
+					"Июл", "Авг", "Сен", "Окт", "Ноя", "Дек" ],
+					"weekdays" : [ "Воскресенье", "Понедельник","Вторник","Среда","Четверг",
+					"Пятница","Суббота" ],
+					"weekdaysShort" : [ "Вс","Пн","Вт","Ср","Чт",
+					"Пт","Сб" ],
+					"weekdaysMin" : [ "Вс","Пн","Вт","Ср","Чт",
+					"Пт","Сб" ]
+				}
+			}
+		});
+	});
+	</script>
+
 </html>

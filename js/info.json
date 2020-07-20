@@ -87,9 +87,19 @@
 				"startdate": "2020-07-10",
 				"enddate": "2020-07-10",
 				"starttime": "16:00",
-				"endtime": "",
+				"endtime": "18:00",
 				"color": "#fab843",
 				"url": "https://www.youtube.com/watch?v=wcIRiGw6wTI&feature=emb_logo"
+			  },
+			  {
+				"id": 9,
+				"name": "Прямой эфир",
+				"startdate": "2020-07-21",
+				"enddate": "2020-07-21",
+				"starttime": "16:00",
+				"endtime": "18:00",
+				"color": "#6662a2",
+				"url": "https://zen.yandex.ru/media/prepod/abiturientam-i-roditeliam-o-postuplenii2020-napravlenie-prikladnaia-matematika-i-informatika-glazami-studentov-anons-5f14db7b0959e86d19f47fab"
 			  }
 			]
 		  }

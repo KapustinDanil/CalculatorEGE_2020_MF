@@ -177,16 +177,16 @@
                     <span><strong>Победители и призеры Российской конференции школьников <br> «Открытие» по секциям: математика и информатика</strong></span><input type="checkbox" id="RKSc" name="enabled" >
                     <span><strong>Олимпиада «Будущие исследователи – будущее науки» по математике <br>(набравшие 30+ баллов)</strong></span><input type="checkbox" id="FIFS" name="enabled" >
                     <span><strong>Олимпиада «Росатом» <br>Победители (призеры) отборочного тура по математике </strong></span><input type="checkbox" id="Pocatom" name="enabled" >
-                    <span><strong>Школа математики и информатики при математическом факультете ЯрГУ<br>( Выпускники, награжденные сертификатами успешного окончания школы )</strong></span><input type="checkbox" id="MathSchool" name="enabled" >
+                   <!--<span><strong>Школа математики и информатики при математическом факультете ЯрГУ<br>( Выпускники, награжденные сертификатами успешного окончания школы )</strong></span><input type="checkbox" id="MathSchool" name="enabled" >-->
                     
                     <span><strong>Всероссийская олимпиада школьников по математике или информатике:</strong></span>
                     <span>Победители (призеры) регионального этапа</span>
                     <input type="checkbox" id="RegEtap" name="enabled" >
                     <span>Победители (призеры) муниципального этапа</span>
                     <input type="checkbox" id="MunicEtap" name="enabled">
-                    <span><strong>Олимпиада по математике, по информатике, проводимая ЯрГУ:</strong></span>
-                    <span>Победители </span><input type="checkbox" id="Pobed" name="enabled" >
-                    <span>Призеры</span><input type="checkbox" id="Prizer" name="enabled" >
+                    <!--<span><strong>Олимпиада по математике, по информатике, проводимая ЯрГУ:</strong></span>-->
+                    <!--<span>Победители </span><input type="checkbox" id="Pobed" name="enabled" >-->
+                    <!--<span>Призеры</span><input type="checkbox" id="Prizer" name="enabled" >-->
                     <span><strong>Отборочный тур Всероссийской командной олимпиады школьников по программированию в Центральном подрегионе России</strong></span>
                     <span> Диплом 1 степени</span><input type="checkbox" id="UnoStepen" name="enabled" >
                     <span> Диплом 2 степени</span><input type="checkbox" id="DuoStepen" name="enabled" >
@@ -258,10 +258,10 @@ if(document.getElementById("Pocatom").checked)
 {
     Pocatom+=10;
 }
-if(document.getElementById("MathSchool").checked)
+/*if(document.getElementById("MathSchool").checked)
 {
     MathSchool+=6;
-}
+}*/
 
 
 var RegEtap=0,MunicEtap=0,Pobed=0,Prizer=0,UnoStepen=0,DuoStepen=0,TreStepen=0;
@@ -274,14 +274,14 @@ if(document.getElementById("MunicEtap").checked)
 {
     MunicEtap+=8;
 }
-if(document.getElementById("Pobed").checked)
+/*if(document.getElementById("Pobed").checked)
 {
     Pobed+=10;
 }
 if(document.getElementById("Prizer").checked)
 {
     Prizer+=8;
-}
+}*/
 if(document.getElementById("UnoStepen").checked)
 {
     UnoStepen+=10;
